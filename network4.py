@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Dec  1 11:46:55 2022
+
+@author: ferna
+"""
+
 # %load network.py
 
 """
@@ -11,8 +18,6 @@ using backpropagation.  Note that I have focused on making the code
 simple, easily readable, and easily modifiable.  It is not optimized,
 and omits many desirable features.
 """
-###################### Programa base modificado con el optimizador Adam
-
 
 #### Libraries
 # Standard library
@@ -39,6 +44,10 @@ class Network(object):
         self.biases = [np.random.randn(y, 1) for y in sizes[1:]]
         self.weights = [np.random.randn(y, x)
                         for x, y in zip(sizes[:-1], sizes[1:])]
+        self.epsilon = 0.00001
+        self.g2 = 0
+        self.beta = 0.9
+
 
     def feedforward(self, a):
         """Return the output of the network if ``a`` is input."""
@@ -86,12 +95,14 @@ class Network(object):
         for x, y in mini_batch:
             delta_nabla_b, delta_nabla_w = self.backprop(x, y)
             nabla_b = [nb+dnb for nb, dnb in zip(nabla_b, delta_nabla_b)]
-            nabla_w = [nw+dnw for nw, dnw in zip(nabla_w, delta_nabla_w)]
-        self.weights = [w-(eta/len(mini_batch))*nw
+            nabla_w = [nw+dnw for nw,  dnw in zip(nabla_w, delta_nabla_w)]
+        grad2 = np.sum([np.sum(np.power(w,2.)) for w in nabla_w])
+        self.g2 = self.beta*self.g2 + (1.-self.beta)*grad2
+        self.weights = [w-(eta/len(mini_batch))/(np.sqrt(self.g2)+self.epsilon)*nw
                         for w, nw in zip(self.weights, nabla_w)]
         self.biases = [b-(eta/len(mini_batch))*nb
                        for b, nb in zip(self.biases, nabla_b)]
-
+        
     def backprop(self, x, y):
         """Return a tuple ``(nabla_b, nabla_w)`` representing the
         gradient for the cost function C_x.  ``nabla_b`` and
@@ -149,4 +160,3 @@ def sigmoid(z):
 def sigmoid_prime(z):
     """Derivative of the sigmoid function."""
     return sigmoid(z)*(1-sigmoid(z))
-

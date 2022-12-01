@@ -4,4 +4,4 @@ Primera Tarea
 
 Incluimos otros programas que usaremos y una carpeta llamada capturas
 
-Agregamos otro código basado en el básico modificando el optimizador y agregamos una captura de pantalla
+Agregamos otro código basado en el básico modificando el optimizador y agregamos una captura de pantalla de prueba ajena al código

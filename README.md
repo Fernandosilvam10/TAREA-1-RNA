@@ -1,7 +1,4 @@
 Comenzamos con la tarea 1
-# TAREA-1-RNA
-Primera Tarea
-
 Incluimos otros programas que usaremos y una carpeta llamada capturas
 
 Agregamos otro código basado en el básico modificando el optimizador y agregamos una captura de pantalla de prueba ajena al código.
@@ -25,3 +22,4 @@ Corremos la red con RMS con 30 neuronas y con una tasa de aprendizaje de 0.001 y
 Introducimos un código donde implementamos la capa cross entropy eliminando un renglón en la Línea 124. 
 
 Implementando cross entropy al código network 5 que tambien tiene el optimizador rms, vemos que al correr el programa la eficiencia al final de la ultima epoca se mantiene igual, 94%. 
+Vemos que la eficiencia del código con cross entropy y con rms es la misma prácticamente que la del código original. Podemos concluir que se pudo aumentar la eficiencia en la prueba 2, unicamente cambiando el valor de la tasa a 0.001 con 30 neuronas.

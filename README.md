@@ -22,4 +22,6 @@ Corremos la red con RMS con 100 neuronas pero es muy lento el entrenamiento. Com
 
 Corremos la red con RMS con 30 neuronas y con una tasa de aprendizaje de 0.001 y vimos que la red mejoró su eficiencia que en caso pasado pero no mejora su eficiencia que en el código original. Se mantiene igual.
 
-Introducimos un código donde implementamos la capa cross entropy eliminando un renglón en la Línea 124.  
+Introducimos un código donde implementamos la capa cross entropy eliminando un renglón en la Línea 124. 
+
+Implementando cross entropy al código network 5 que tambien tiene el optimizador rms, vemos que al correr el programa la eficiencia al final de la ultima epoca se mantiene igual, 94%. 

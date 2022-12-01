@@ -9,3 +9,5 @@ Agregamos otro código basado en el básico modificando el optimizador y agregam
 En el código temp.py hicimos la primera corrida del código base para probarlo sin cambiar nada, agregando la captura de pantalla de compilación 1.
 
 Observamos que en la prueba 1, con 100 neuronas, la red entrena mucho más lento y baja significativamente su eficiencia a menos del 70%.
+
+En la prueba 2, asignamos la tasa de aprendizaje a 0.001, y la red al final aumenta al 95% de eficiencia, un 1% mas que el código base.

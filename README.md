@@ -17,3 +17,5 @@ En la prueba 3, asignamos una tasa de aprendizaje de 50, y la red al final se ma
 Me encuentro atorado en implementar correctamente el optimizador RMSPROP.
 
 Resolviendo el punto anterior, se introdujeron ciertas variables epsilon, delta y "g" para introducir el modelo matemático del optimizador RMSPROP
+
+Corremos la red con RMS con 100 neuronas pero es muy lento el entrenamiento. Comienza con una eficiencia muy baja (debajo del 40%) y en 30 épocas no alcanza al final el 70% de efectividad.
